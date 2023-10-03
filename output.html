@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Procurement Summary</title>
+</head>
+
+<body>
+    <h1>Procurement Summary</h1>
+
+    <!-- Form for Hub, GRN, Supplier, and Supplier Name -->
+    <form>
+        <label for="hub">Hub*:</label>
+        <input type="text" id="hub" name="hub" value="SOMEHUB"><br><br>
+
+        <label for="grn">GRN:</label>
+        <input type="text" id="grn" name="grn"><br><br>
+
+        <label for="supplier">Supplier*:</label>
+        <input type="text" id="supplier" name="supplier" value="SOMEID"><br><br>
+
+        <label for="supplier_name">Supplier Name:</label>
+        <input type="text" id="supplier_name" name="supplier_name" value="Sunil N"><br><br>
+    </form>
+
+    <!-- Created By and Created Date -->
+    <p><strong>Created By:</strong> grn@iotready.co</p>
+    <p><strong>Created Date:</strong> 2022-08-24 16:22:13.985299</p>
+
+
+    <!-- SKU Table -->
+    <h2>SKU Summary</h2>
+    <table border="1">
+        <tr>
+            <th>● No.</th>
+            <th><strong>SKU</strong></th>
+            <th>SKU Description</th>
+            <th>Standard Crate Quantity</th>
+            <th><strong>Procured Quantity</strong></th>
+        </tr>
+
+        <tr>
+            <td>&#8226;</td> <!-- Bullet notation -->
+            <td><strong>10000298</strong></td>
+            <td>Mango Banganapalli 1 kg</td>
+            <td>18000</td>
+            <td><strong>36190</strong></td>
+
+        </tr>
+
+    </table>
+
+    <!-- Crate Table -->
+    <h2>Create List</h2>
+    <h3>Create Table</h3>
+    <table border="1">
+        <tr>
+            <th>● No.</th>
+            <th><strong>Crate</strong></th>
+            <th>SKU</th>
+            <th>Packed Quantity</th>
+            <th>Crate Weight</th>
+            <th>Is Final Crate</th>
+
+
+        </tr>
+
+        <tr>
+            <td>&#8226;</td>
+            <td><strong>3e410b75b4</strong></td>
+            <td>10000298</td>
+            <td>18100</td>
+            <td>18100</td>
+            <td>0</td>
+
+        </tr>
+
+        <tr>
+            <td>&#8226;</td>
+            <td><strong>7c2eba029c</strong></td>
+            <td>10000298</td>
+            <td>18090</td>
+            <td>18090</td>
+            <td>0</td>
+
+        </tr>
+
+    </table>
+</body>
+
+</html>

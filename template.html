@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Procurement Summary</title>
+</head>
+
+<body>
+    <h1>Procurement Summary</h1>
+
+    <!-- Form for Hub, GRN, Supplier, and Supplier Name -->
+    <form>
+        <label for="hub">Hub*:</label>
+        <input type="text" id="hub" name="hub" value="{{ data.hub }}"><br><br>
+
+        <label for="grn">GRN:</label>
+        <input type="text" id="grn" name="grn"><br><br>
+
+        <label for="supplier">Supplier*:</label>
+        <input type="text" id="supplier" name="supplier" value="{{ data.supplier }}"><br><br>
+
+        <label for="supplier_name">Supplier Name:</label>
+        <input type="text" id="supplier_name" name="supplier_name" value="{{ data.supplier_name }}"><br><br>
+    </form>
+
+    <!-- Created By and Created Date -->
+    <p><strong>Created By:</strong> {{ data.modified_by }}</p>
+    <p><strong>Created Date:</strong> {{ data.creation }}</p>
+
+
+    <!-- SKU Table -->
+    <h2>SKU Summary</h2>
+    <table border="1">
+        <tr>
+            <th>● No.</th>
+            <th><strong>SKU</strong></th>
+            <th>SKU Description</th>
+            <th>Standard Crate Quantity</th>
+            <th><strong>Procured Quantity</strong></th>
+        </tr>
+        {% for sku_entry in data.sku_table %}
+        <tr>
+            <td>&#8226;</td> <!-- Bullet notation -->
+            <td><strong>{{ sku_entry.sku }}</strong></td>
+            <td>{{ sku_entry.sku_description }}</td>
+            <td>{{ sku_entry.standard_crate_quantity }}</td>
+            <td><strong>{{ sku_entry.quantity }}</strong></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Crate Table -->
+    <h2>Create List</h2>
+    <h3>Create Table</h3>
+    <table border="1">
+        <tr>
+            <th>● No.</th>
+            <th><strong>Crate</strong></th>
+            <th>SKU</th>
+            <th>Packed Quantity</th>
+            <th>Crate Weight</th>
+            <th>Is Final Crate</th>
+
+
+        </tr>
+        {% for crate_entry in data.crate_table %}
+        <tr>
+            <td>&#8226;</td>
+            <td><strong>{{ crate_entry.crate }}</strong></td>
+            <td>{{ crate_entry.sku }}</td>
+            <td>{{ crate_entry.packed_quantity }}</td>
+            <td>{{ crate_entry.crate_weight }}</td>
+            <td>{{ crate_entry.is_final_crate }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
